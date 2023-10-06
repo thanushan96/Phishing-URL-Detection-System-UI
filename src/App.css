@@ -1,0 +1,28 @@
+
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: auto;
+}
+
+
+.Header{
+  display: flex;
+  flex-grow: 1;
+  height: 10vh;
+  background-color: blueviolet;
+  padding-left: 10px;
+  /* font-size: 3rem; */
+  text-align: center;
+  justify-content: space-around;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 10px 10px;
+}
+
+.Header button {
+  width: 4vw;
+  height: auto;
+}
