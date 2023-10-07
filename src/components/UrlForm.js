@@ -10,7 +10,10 @@ const UrlForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="col-md-12 min-vh-100 " style={{ boxSizing: "border-box" }}>
+    <div
+      className="col-md-12 min-vh-100 "
+      style={{ boxSizing: "border-box", paddingTop: "5rem" }}
+    >
       <div className="card ">
         <div className="card-body">
           <h1 className="card-title mb-4">URL Analyzer</h1>

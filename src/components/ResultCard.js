@@ -9,7 +9,10 @@ const ResultCard = ({ data }) => {
   };
 
   return (
-    <div className="container" style={{ marginTop: "-26rem" }}>
+    <div
+      className="container"
+      style={{ marginTop: "-26rem", paddingTop: "5rem" }}
+    >
       <div className="card ">
         <div className="card-body ">
           <h5 className="card-title">{data.status_value}</h5>
