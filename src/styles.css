@@ -11,6 +11,9 @@ html{
     width: 200px;
     height: 150px;
   }
+  .fixed-card-2 {
+    height: 130px;
+  }
   .additional-content {
     display: none; 
   }

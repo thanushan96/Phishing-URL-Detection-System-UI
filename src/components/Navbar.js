@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-secondary ">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
       <a className="navbar-brand" href="#">
         <i className="fas fa-rocket" style={{ marginLeft: "5px" }}></i> ML API
       </a>

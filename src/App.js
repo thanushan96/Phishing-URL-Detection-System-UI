@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import MainContent from "./components/MainContent";
 import UrlForm from "./components/UrlForm";
 import ResultCard from "./components/ResultCard";
+import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -42,6 +43,7 @@ const App = () => {
           {resultData && <ResultCard data={resultData} />}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

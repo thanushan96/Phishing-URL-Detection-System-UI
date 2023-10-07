@@ -11,15 +11,15 @@ const ResultCard = ({ data }) => {
   return (
     <div
       className="container"
-      style={{ marginTop: "-26rem", paddingTop: "5rem" }}
+      style={{ marginTop: "-26rem", paddingTop: "8rem" }}
     >
       <div className="card ">
         <div className="card-body ">
           <h5 className="card-title">{data.status_value}</h5>
           <div className="row ">
             <div className="col-md-3 mb-4">
-              <div className="card fixed-card">
-                <div className="card-body">
+              <div className="card ">
+                <div className="card-body fixed-card-2">
                   <i className="fas fa-envelope fa-2x"></i>
                   <p className="card-text">Hidden Message: {data.hidden_msg}</p>
                 </div>
@@ -27,10 +27,10 @@ const ResultCard = ({ data }) => {
             </div>
 
             <div className="col mb-4">
-              <div className="card">
+              <div className="card ">
                 <div
-                  className="card-body green-card"
-                  style={{ backgroundColor: "#e0e0e0", height: "150px" }}
+                  className="card-body fixed-card-2"
+                  style={{ backgroundColor: "#e0e0e0" }}
                 >
                   <i className="fas fa-link fa-2x"></i>
                   <p className="card-text">URL Status: {data.urlstatus}</p>
@@ -41,7 +41,6 @@ const ResultCard = ({ data }) => {
 
           {isExpanded && (
             <div id="additional-content">
-              {/* Additional content goes here */}
               <div className="row">
                 <div className="col-md-12 mb-4">
                   <div className="card">
