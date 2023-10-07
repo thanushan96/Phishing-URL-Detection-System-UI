@@ -1,0 +1,28 @@
+html{
+    height: 100%;
+    box-sizing: content-box;
+  }
+  
+  .custom-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+  }
+  .fixed-card {
+    width: 200px;
+    height: 150px;
+  }
+  .additional-content {
+    display: none; 
+  }
+  .center-button {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  
+  .card {
+    width: 100%; 
+     
+  }
+  
+  
