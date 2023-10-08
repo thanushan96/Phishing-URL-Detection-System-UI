@@ -1,18 +1,20 @@
-import "./App.css";
 import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import MainContent from "./components/MainContent";
+import Home from "./components/Home";
 import UrlForm from "./components/UrlForm";
 import ResultCard from "./components/ResultCard";
 import Footer from "./components/Footer";
+import About from "./components/About";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = () => {
-  const [resultData, setResultData] = useState(null);
+  const [resultData, setResultData] = useState({});
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [showResultCard, setShowResultCard] = useState(false);
 
   const handleSubmit = (url) => {
-    // Make the fetch request and update setResultData
     console.log("Button clicked");
     fetch("http://localhost:8000/predict", {
       method: "POST",
@@ -24,6 +26,8 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         setResultData(data);
+        setIsFormSubmitted(true);
+        setShowResultCard(true);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -31,20 +35,31 @@ const App = () => {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <MainContent />
-
-      <div className="container  mt-5 ">
-        <div className="row">
-          <UrlForm onSubmit={handleSubmit} />
-        </div>
-        <div className="row mt-4" id="result">
-          {resultData && <ResultCard data={resultData} />}
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home setShowResultCard={setShowResultCard} />}
+        />
+        <Route
+          path="/about"
+          element={<About setShowResultCard={setShowResultCard} />}
+        />
+        <Route
+          path="/Analyze"
+          element={
+            <>
+              <UrlForm onSubmit={handleSubmit} />
+              {isFormSubmitted && showResultCard && (
+                <ResultCard data={resultData} />
+              )}
+            </>
+          }
+        />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 

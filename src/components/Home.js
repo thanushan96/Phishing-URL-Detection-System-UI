@@ -1,6 +1,9 @@
+// Home.js
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function MainContent() {
+export default function Home({ setShowResultCard }) {
+  setShowResultCard(false);
   return (
     <div className="container min-vh-100 d-flex justify-content-center align-items-center flex-column">
       <div>
@@ -13,9 +16,9 @@ export default function MainContent() {
           🚀
         </p>
         <div className="d-flex justify-content-center">
-          <a href="#url-input" className="btn btn-primary btn-lg mb-5">
+          <Link to="/Analyze" className="btn btn-primary btn-lg mb-5">
             Protect Yourself Now
-          </a>
+          </Link>
         </div>
       </div>
     </div>

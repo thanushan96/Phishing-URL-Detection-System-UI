@@ -11,7 +11,7 @@ const UrlForm = ({ onSubmit }) => {
 
   return (
     <div
-      className="col-md-12 min-vh-100 "
+      className="container  mt-5col-md-12 min-vh-100 "
       style={{ boxSizing: "border-box", paddingTop: "8rem" }}
     >
       <div className="card ">

@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
-      <a className="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <NavLink className="navbar-brand" to="/">
         <i className="fas fa-rocket" style={{ marginLeft: "5px" }}></i> ML API
-      </a>
+      </NavLink>
       <button
         className="navbar-toggler"
         type="button"
@@ -23,19 +24,23 @@ export default function Navbar() {
       >
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              <i className="fas fa-home"></i> Home
-            </a>
+            <NavLink exact className="nav-link" to="/" activeClassName="active">
+              <i className="fas fa-home fa-lg"></i> Home
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              <i className="fas fa-info-circle"></i> About
-            </a>
+            <NavLink
+              className="nav-link"
+              to="/Analyze"
+              activeClassName="active"
+            >
+              <i className="fa-solid fa-fingerprint fa-lg"></i> Analyze
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              <i className="fas fa-envelope"></i> Contact
-            </a>
+            <NavLink className="nav-link" to="/about" activeClassName="active">
+              <i className="fas fa-info-circle fa-lg"></i> About
+            </NavLink>
           </li>
         </ul>
       </div>
