@@ -11,22 +11,20 @@ import About from "./components/About";
 import Logout from "./components/Logout ";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import { Link } from "react-router-dom";
 const App = () => {
   const [resultData, setResultData] = useState({});
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [showResultCard, setShowResultCard] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState(""); // Step 1: Create a state variable for username
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    // Step 2: Fetch the username when the component mounts or when isAuthenticated changes
     if (isAuthenticated) {
-      // Replace this URL with your actual API endpoint to fetch the username
       fetch("http://localhost:8000/getUsername", {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`, // Include your authentication token here
+          Authorization: `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`,
         },
       })
         .then((response) => response.json())
@@ -62,7 +60,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar isAuthenticated={isAuthenticated} username={username} />{" "}
-      {/* Step 3: Pass username as a prop */}
       <Routes>
         <Route
           path="/"
@@ -80,14 +77,37 @@ const App = () => {
         <Route
           path="/Analyze"
           element={
-            <>
-              <Analyze onSubmit={handleSubmit} />
-              {isFormSubmitted && showResultCard && (
-                <ResultCard data={resultData} />
-              )}
-            </>
+            isAuthenticated ? (
+              <>
+                <Analyze onSubmit={handleSubmit} />
+                {isFormSubmitted && showResultCard && (
+                  <ResultCard data={resultData} />
+                )}
+              </>
+            ) : (
+              <div
+                className="container justify-content-center align-items-center min-vh-100"
+                style={{ margin: "6rem" }}
+              >
+                <div className="row justify-content-center">
+                  <div className="col-md-6">
+                    <div className="card">
+                      <div className="card-header">
+                        <h2 className="text-center">Warning</h2>
+                      </div>
+                      <div className="card-body">
+                        <div className="alert alert-danger" role="alert">
+                          <Link to="/login">Sign in</Link> to analyze the URL
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
           }
         />
+
         {/* Routes for Login and Register */}
         {!isAuthenticated ? (
           <>
