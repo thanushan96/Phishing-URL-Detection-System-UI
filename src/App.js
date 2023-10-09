@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import UrlForm from "./components/UrlForm";
@@ -13,6 +15,7 @@ const App = () => {
   const [resultData, setResultData] = useState({});
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [showResultCard, setShowResultCard] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleSubmit = (url) => {
     console.log("Button clicked");
@@ -36,11 +39,16 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated} />
       <Routes>
         <Route
           path="/"
-          element={<Home setShowResultCard={setShowResultCard} />}
+          element={
+            <Home
+              setShowResultCard={setShowResultCard}
+              isAuthenticated={isAuthenticated}
+            />
+          }
         />
         <Route
           path="/about"
@@ -57,6 +65,16 @@ const App = () => {
             </>
           }
         />
+        {/* Routes for Login and Register */}
+        {!isAuthenticated ? (
+          <>
+            <Route
+              path="/login"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
+            <Route path="/register" element={<Register />} />
+          </>
+        ) : null}
       </Routes>
       <Footer />
     </BrowserRouter>
