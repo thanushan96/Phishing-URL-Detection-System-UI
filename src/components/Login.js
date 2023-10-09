@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setIsAuthenticated, setUsername }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -31,6 +31,8 @@ const Login = () => {
       .then((data) => {
         setMessage(data.message);
         if (data.message === "Login successful!") {
+          setIsAuthenticated(true);
+          setUsername(formData.username);
           navigate("/Analyze");
         }
       })

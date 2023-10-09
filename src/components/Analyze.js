@@ -1,7 +1,6 @@
-// UrlForm.js
 import React, { useState } from "react";
 import "../styles.css";
-const UrlForm = ({ onSubmit }) => {
+const Analyze = ({ onSubmit }) => {
   const [url, setUrl] = useState("");
 
   const handleSubmit = (e) => {
@@ -42,4 +41,4 @@ const UrlForm = ({ onSubmit }) => {
   );
 };
 
-export default UrlForm;
+export default Analyze;

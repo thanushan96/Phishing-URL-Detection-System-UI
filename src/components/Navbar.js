@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar({ isAuthenticated, onLogout }) {
+const Navbar = ({ isAuthenticated, username }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <NavLink className="navbar-brand" to="/">
@@ -42,13 +42,19 @@ export default function Navbar({ isAuthenticated, onLogout }) {
               <i className="fas fa-info-circle fa-lg"></i> About
             </NavLink>
           </li>
-
           {isAuthenticated ? (
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/logout" onClick={onLogout}>
-                <i className="fas fa-sign-out-alt fa-lg"></i> Logout
-              </NavLink>
-            </li>
+            <>
+              <li className="nav-item">
+                <span className="nav-link">
+                  <i className="fas fa-user fa-lg"></i> {username}
+                </span>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/logout" className="nav-link">
+                  <i className="fas fa-sign-out-alt fa-lg"></i> Logout
+                </NavLink>
+              </li>
+            </>
           ) : (
             <li className="nav-item">
               <NavLink className="nav-link" to="/login">
@@ -60,4 +66,6 @@ export default function Navbar({ isAuthenticated, onLogout }) {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
