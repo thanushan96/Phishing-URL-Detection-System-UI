@@ -10,7 +10,7 @@ const Analyze = ({ onSubmit }) => {
 
   return (
     <div
-      className="container  col-md-12 min-vh-100 "
+      className="container  col-md-12 min-vh-60 "
       style={{ boxSizing: "border-box", paddingTop: "2rem" }}
     >
       <div className="card ">

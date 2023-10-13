@@ -9,10 +9,7 @@ const ResultCard = ({ data }) => {
   };
 
   return (
-    <div
-      className="container"
-      style={{ marginTop: "-26rem", paddingTop: "2rem" }}
-    >
+    <div className="container mt-3">
       <div className="card ">
         <div className="card-body ">
           <h5 className="card-title">{data.status_value}</h5>
@@ -128,7 +125,7 @@ const ResultCard = ({ data }) => {
 
           <div className="row">
             <div className="col-md-12 mb-4">
-              <div className="center-button">
+              <div className="center-button" style={{ paddingBottom: "5rem" }}>
                 <button
                   id="show-more-button"
                   className="btn btn-primary"

@@ -85,20 +85,15 @@ const App = () => {
                 )}
               </>
             ) : (
-              <div
-                className="container justify-content-center align-items-center min-vh-100"
-                style={{ margin: "6rem" }}
-              >
-                <div className="row justify-content-center">
-                  <div className="col-md-6">
-                    <div className="card">
-                      <div className="card-header">
-                        <h2 className="text-center">Warning</h2>
-                      </div>
-                      <div className="card-body">
-                        <div className="alert alert-danger" role="alert">
-                          <Link to="/login">Sign in</Link> to analyze the URL
-                        </div>
+              <div className="container d-flex justify-content-center align-items-center min-vh-100">
+                <div className="col-md-6">
+                  <div className="card">
+                    <div className="card-header">
+                      <h2 className="text-center">Warning</h2>
+                    </div>
+                    <div className="card-body">
+                      <div className="alert alert-danger" role="alert">
+                        <Link to="/login">Sign in</Link> to analyze the URL
                       </div>
                     </div>
                   </div>

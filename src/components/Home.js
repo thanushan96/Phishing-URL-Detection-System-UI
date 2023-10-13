@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 export default function Home({ setShowResultCard }) {
   setShowResultCard(false);
   return (
-    <div className="container min-vh-100 d-flex justify-content-center align-items-center flex-column">
+    <div
+      className="container  d-flex justify-content-center align-items-center flex-column"
+      style={{ minHeight: "80vh" }}
+    >
       <div>
         <h1 className="text-center">
           <span style={{ color: "#2b82c9" }}>PhishGuard</span> 🛡️🔍

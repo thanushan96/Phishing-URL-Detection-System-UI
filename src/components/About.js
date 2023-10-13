@@ -3,7 +3,7 @@ import React from "react";
 export default function About({ setShowResultCard }) {
   setShowResultCard(false);
   return (
-    <div className="container mt-2 min-vh-100 d-flex justify-content-center align-items-center flex-column">
+    <div className="container mt-2 min-vh-100 d-flex justify-content-center align-items-center flex-column ">
       <div>
         <h1 className="text-center">
           <span className="text-primary">PhishGuard</span> 🛡️🔍
@@ -50,7 +50,7 @@ export default function About({ setShowResultCard }) {
               Efficient and reliable detection system
             </li>
           </ul>
-          <p className="mt-4">
+          <p className="mt-4 mb-5">
             Take control of your online security and protect yourself from
             phishing attacks with PhishGuard. Get started now by entering your
             URL in the input box above and experience the power of advanced Deep
