@@ -5,7 +5,8 @@ const Navbar = ({ isAuthenticated, username }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <NavLink className="navbar-brand" to="/">
-        <i className="fas fa-rocket" style={{ marginLeft: "5px" }}></i> ML API
+        <i className="fas fa-rocket" style={{ marginLeft: "5px" }}></i>
+        PhishGuard 🛡️
       </NavLink>
       <button
         className="navbar-toggler"

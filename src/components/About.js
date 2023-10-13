@@ -3,7 +3,7 @@ import React from "react";
 export default function About({ setShowResultCard }) {
   setShowResultCard(false);
   return (
-    <div className="container min-vh-100 d-flex justify-content-center align-items-center flex-column">
+    <div className="container mt-2 min-vh-100 d-flex justify-content-center align-items-center flex-column">
       <div>
         <h1 className="text-center">
           <span className="text-primary">PhishGuard</span> 🛡️🔍

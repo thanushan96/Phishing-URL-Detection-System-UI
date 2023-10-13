@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       className="bg-dark text-light text-center py-2"
-      style={{ marginTop: "1rem" }}
+      style={{ marginTop: "5rem" }}
     >
       <div className="container">
         <div className="row">

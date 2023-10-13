@@ -11,7 +11,7 @@ const ResultCard = ({ data }) => {
   return (
     <div
       className="container"
-      style={{ marginTop: "-26rem", paddingTop: "8rem" }}
+      style={{ marginTop: "-26rem", paddingTop: "2rem" }}
     >
       <div className="card ">
         <div className="card-body ">
@@ -21,7 +21,7 @@ const ResultCard = ({ data }) => {
               <div className="card ">
                 <div className="card-body fixed-card-2">
                   <i className="fas fa-envelope fa-2x"></i>
-                  <p className="card-text">Hidden Message: {data.hidden_msg}</p>
+                  <p className="card-text">Whitelisted: {data.hidden_msg}</p>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-chart-line card-icon fa-2x"></i>
                       <p className="card-text">
                         Prediction (NLP Model): {data.prediction_text}
                       </p>
@@ -57,7 +57,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-chart-line card-icon fa-2x"></i>
                       <p className="card-text">
                         Feature-Based Prediction: {data.featurebase_predict}
                       </p>
@@ -69,7 +69,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-building card-icon fa-2x"></i>
                       <p className="card-text">
                         URL Issued By: {data.URL_issued_by}
                       </p>
@@ -81,7 +81,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-building card-icon fa-2x"></i>
                       <p className="card-text">
                         URL Issued To: {data.URL_issued_to}
                       </p>
@@ -93,7 +93,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-calendar-alt card-icon fa-2x"></i>
                       <p className="card-text">
                         Created Date: {data.created_date}
                       </p>
@@ -105,7 +105,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-calendar-times card-icon fa-2x"></i>
                       <p className="card-text">
                         Expired Date: {data.expired_date}
                       </p>
@@ -117,7 +117,7 @@ const ResultCard = ({ data }) => {
                 <div className="col-md-12 mb-4">
                   <div className="card">
                     <div className="card-body">
-                      <i className="fas fa-cogs fa-2x"></i>
+                      <i className="fas fa-history card-icon fa-2x"></i>
                       <p className="card-text">Domain Age: {data.domain_age}</p>
                     </div>
                   </div>
