@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -18,24 +18,6 @@ const App = () => {
   const [showResultCard, setShowResultCard] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      fetch("http://localhost:8000/getUsername", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setUsername(data.username);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-  }, [isAuthenticated]);
 
   const handleSubmit = (url) => {
     console.log("Button clicked");
@@ -85,7 +67,10 @@ const App = () => {
                 )}
               </>
             ) : (
-              <div className="container d-flex justify-content-center align-items-center min-vh-100">
+              <div
+                className="container d-flex justify-content-center align-items-center "
+                style={{ minHeight: "80vh" }}
+              >
                 <div className="col-md-6">
                   <div className="card">
                     <div className="card-header">
