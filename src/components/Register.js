@@ -30,7 +30,6 @@ const Register = () => {
       .then((response) => response.json())
       .then((data) => {
         setMessage(data.message);
-        // Handle registration success or failure as needed
       })
       .catch((error) => {
         console.error("Error:", error);
